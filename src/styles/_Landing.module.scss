@@ -1,0 +1,21 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/fonts" as *;
+@use "./variables/global" as *;
+@use "./variables/colors" as *;
+.header {
+  height: 56.25rem !important;
+  .title {
+    height: 100%;
+    @include flex-variant(
+      flex,
+      $direction: column,
+      $align: flex-start,
+      $justify: center
+    );
+    color: $white;
+    font-family: "Inter-Regular";
+    .button {
+      margin: $margin-1;
+    }
+  }
+}

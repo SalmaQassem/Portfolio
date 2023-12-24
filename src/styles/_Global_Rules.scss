@@ -1,0 +1,35 @@
+@use "./variables/mediaQuery" as *;
+@use "../helpers/mixins" as *;
+%reset {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+  @extend %reset;
+  @include mediaQuery($XXXlargeScreen_min_width) {
+    font-size: 0.8vw;
+  }
+}
+body {
+  height: 100%;
+  @extend %reset;
+  line-height: 1.7;
+}
+* {
+  @extend %reset;
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+  border: none;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}

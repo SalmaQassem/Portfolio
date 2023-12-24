@@ -1,0 +1,96 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/fonts" as *;
+@use "./variables/global" as *;
+@use "./variables/colors" as *;
+.features {
+  .cards {
+    @include flex-variant(flex, $direction: row);
+    .card {
+      padding: 1.875rem;
+      background-color: $mainColor;
+      position: relative;
+      top: -7rem;
+      z-index: 999;
+      &:nth-of-type(2) {
+        box-shadow: 0px 0 1.875rem 0.625rem rgba(0, 0, 0, 0.25);
+        background-color: $secondaryColor-2;
+        z-index: 1000;
+        &::before {
+          content: "";
+          height: 3.125rem;
+          width: 100%;
+          position: absolute;
+          top: -3.125rem;
+          left: 0;
+          background-color: inherit;
+        }
+        &::after {
+          content: "";
+          height: 1.875rem;
+          width: 100%;
+          position: absolute;
+          bottom: -1.875rem;
+          left: 0;
+          background-color: inherit;
+        }
+        .innerCard {
+          //transform: translateY(-3.125rem);
+          position: relative;
+          top: -3.125rem;
+          .iconWrapper {
+            background-color: $secondaryColor-4 !important;
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        background-color: $secondaryColor-3;
+        .iconWrapper {
+          background-color: $secondaryColor-5 !important;
+        }
+      }
+      .innerCard {
+        @include flex-variant(flex, $direction: column, $align: center);
+        color: $white;
+        font-family: "Inter-Light";
+        text-align: center;
+        .icon {
+          width: 100%;
+          height: 5.625rem;
+          @include flex-row-center();
+          position: relative;
+          background-color:inherit;
+          z-index: 1000;
+          .iconWrapper {
+            width: 5.625rem;
+            height: 100%;
+            @include flex-row-center();
+            position: absolute;
+            top: -53%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $secondaryColor-1;
+            border-radius: 50%;
+            font-size: 2.5rem;
+          }
+        }
+        h2 {
+          margin: $margin-3;
+          font-size: 1.125rem;
+          text-transform: uppercase;
+        }
+        .text {
+          margin: $margin-1;
+          color: $white-2;
+          font-size: 1rem;
+        }
+        .btnWrapper {
+          margin: $margin-1;
+          @include flex-row-center();
+          .button {
+            padding: 0.5rem 1.875rem;
+          }
+        }
+      }
+    }
+  }
+}

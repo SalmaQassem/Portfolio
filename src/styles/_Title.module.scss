@@ -1,0 +1,5 @@
+@use "./variables/global" as *;
+.title {
+  font-size: $head-font;
+  text-transform: capitalize;
+}
