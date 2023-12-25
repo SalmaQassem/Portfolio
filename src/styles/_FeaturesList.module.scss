@@ -1,0 +1,49 @@
+@use "../helpers/mixins" as *;
+@use "./variables/global" as *;
+@use "./variables/colors" as *;
+.featuresList {
+  @include flex-variant(
+    flex,
+    $direction: row,
+    $align: flex-start,
+    $justify: center
+  );
+  .featureWrapper {
+    padding: $padding-1;
+    .feature {
+      padding: $padding-7;
+      margin: $margin-4;
+      @include flex-variant(
+        flex,
+        $direction: column,
+        $align: center,
+        $justify: center
+      );
+      text-align: center;
+      .icon {
+        width: 5.625rem;
+        height: 5.625rem;
+        margin: $margin-2;
+        @include flex-row-center();
+        border-radius: 50%;
+        border: $border-1 solid $grey-2;
+        color: $mainColor;
+        font-size: 2.5rem;
+      }
+      .title {
+        margin: $margin-2;
+        color: $black;
+        font-family: "Inter-Light";
+        font-size: 1.125rem;
+        line-height: 1.1;
+        text-transform: capitalize;
+      }
+      .description {
+        margin: $margin-2;
+        font-size: 1rem;
+        color: $grey-1;
+        font-family: "Inter-Regular";
+      }
+    }
+  }
+}
